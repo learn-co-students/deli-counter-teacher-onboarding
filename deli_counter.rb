@@ -26,14 +26,10 @@ end
 
 #Serves the next person in line and removes them from it
 def now_serving(deli)
-  loop do
-    if deli.size == 0
-      puts "There is nobody waiting to be served!"
-      break
-    else
-      puts "Currently serving #{deli[0]}."
-      deli.shift
-      break
-    end
+  if deli.size == 0
+    puts "There is nobody waiting to be served!"
+  else
+    puts "Currently serving #{deli[0]}."
+    deli.shift
   end
 end
