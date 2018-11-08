@@ -10,7 +10,7 @@ def line(deli)
     response = "The line is currently:"
     loop do
       i += 1
-      response = response << " " << i.to_s << ". " << deli[i-1]
+      response = "#{response} #{i.to_s}. #{deli[i-1]}"
       if i == deli.size
         puts response
         break
@@ -21,10 +21,7 @@ end
 
 #Adds someone to the deli's line
 def take_a_number(deli, name)
-  deli.push(name)
-  current = deli.size
-  response = "Welcome, " << name << ". You are number " << current.to_s << " in line."
-  puts response
+  puts "Welcome, #{name}. You are number #{deli.push(name).size} in line."
 end
 
 #Serves the next person in line and removes them from it
@@ -34,7 +31,7 @@ def now_serving(deli)
       puts "There is nobody waiting to be served!"
       break
     else
-      puts "Currently serving " << deli[0] << "."
+      puts "Currently serving #{deli[0]}."
       deli.shift
       break
     end
